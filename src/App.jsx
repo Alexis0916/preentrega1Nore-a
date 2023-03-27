@@ -12,6 +12,5 @@ function App() {
       <ItemListContainer greeting="Bienvenido a EXA Pinturas" />
     </div>
   )
-}
- 
+} 
 export default App;

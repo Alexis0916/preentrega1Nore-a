@@ -74,7 +74,6 @@ const Navbar = () => {
         </div>
         <div className="cart">
         <CartWidget />
-        <strong  className="cartCantidad">1</strong>
         </div>
       </nav>
     </div>
