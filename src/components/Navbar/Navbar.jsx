@@ -1,15 +1,16 @@
 /* snippet rafce */
 import React from "react";
 import "./Navbar.css";
-import logo from "../../assets/img/logo/exa.jpg";
+import logo from "../../assets/logo.jpg";
 import CartWidget from "../CartWidget/CartWidget";
+import { Outlet, Link } from "react-router-dom";
 
 const Navbar = () => {
   return (
     <div>
       <nav className="navbar navbar-expand-lg navbar-light">
         <div className="container-fluid">
-          <a className="navbar-brand" href="#">
+          <a className="navbar-brand" href="/">
             <img
               src={logo}
               alt="logo"
@@ -20,7 +21,7 @@ const Navbar = () => {
             />
           </a>
           <button
-            className="navbar-toggler"
+            className="navbar-toggler me-4"
             type="button"
             data-bs-toggle="collapse"
             data-bs-target="#navbarSupportedContent"
@@ -30,51 +31,59 @@ const Navbar = () => {
           >
             <span className="navbar-toggler-icon"></span>
           </button>
+          <div className="cart">
+            <CartWidget />
+          </div>
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-              <li className="nav-item">
-              </li>
+              <li className="nav-item"></li>
               <li className="nav-item dropdown">
-                <a
+                <p
                   className="nav-link dropdown-toggle"
-                  href="#"
                   id="navbarDropdown"
                   role="button"
                   data-bs-toggle="dropdown"
                   aria-expanded="false"
                 >
                   Tipos de pinturas
-                </a>
+                </p>
                 <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
                   <li>
-                    <a className="dropdown-item" href="#">
+                    {/* <a className="dropdown-item" href="/">
                       Exterior
-                    </a>
+                    </a> */}
+                    <Link className="dropdown-item" to={`/category/exterior`}>
+                      Exterior
+                    </Link>
                   </li>
                   <li>
-                    <a className="dropdown-item" href="#">
+                    {/* <a className="dropdown-item" href="/">
                       Interior
-                    </a>
+                    </a> */}
+                    <Link className="dropdown-item" to={`/category/interior`}>
+                      Interior
+                    </Link>
                   </li>
 
                   <li>
-                    <a className="dropdown-item" href="#">
+                    {/* <a className="dropdown-item" href="/">
                       Drywall
-                    </a>
+                    </a> */}
+                    <Link className="dropdown-item" to={`/category/drywall`}>
+                      Drwall
+                    </Link>
                   </li>
                 </ul>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="#">
+                <a className="nav-link" href="/">
                   Contacto
                 </a>
               </li>
             </ul>
           </div>
         </div>
-        <div className="cart">
-        <CartWidget />
-        </div>
+
       </nav>
     </div>
   );
