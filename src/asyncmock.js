@@ -20,7 +20,8 @@ export const getProducts = () => {
 export const getUnProduct = (id) => {
     return new Promise((resolve) => {
         setTimeout(() => {
-            const producto = products.find((prod) => prod.id === id);
+            const producto = products.find((prod) => prod.id === parseInt(id));
+            console.log('producto' , producto)
             resolve(producto);
         }, 2000);
     });

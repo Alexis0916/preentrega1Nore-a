@@ -1,20 +1,29 @@
 import { getUnProduct } from "../../asyncmock";
 import { useEffect, useState } from "react";
 import ItemDetail from "../ItemDetail/ItemDetail";
+import { useParams } from "react-router-dom";
 
 const ItemDetailContainer = () => {
-  const [producto, setProducto] = useState(null);
+  const { id } = useParams();
+
+  const [producto, setProducto] = useState();
+
+  console.log('id*********', id);
 
   useEffect(() => {
-    getUnProduct(2)
-      .then((res) => setProducto(res))
+    getUnProduct(id)
+      .then((res) => {
+        console.log('res*********', res);
+        setProducto(res)
+      })
       .catch((err) => console.log(err));
-  }, []);
+  }, [id]);
 
-  return <div>
-<ItemDetail {...producto} />
-
-  </div>;
+  return (
+    <div>
+      <ItemDetail {...producto} />
+    </div>
+  );
 };
 
 export default ItemDetailContainer;
