@@ -1,9 +1,9 @@
 import "./App.css";
 import Navbar from "./components/Navbar/Navbar";
-import ItemListContainer from "./components/ItemListContainer/ItemListContainer";
+import ItemListContainer from "./components/ItemListContainer/ItemListContainer.jsx";
 
 function App() {
-  /* todo el coedigo js antes del retuturn */
+  /* todo el codigo js antes del retuturn */
   return (
     /* aca va el codigo jsx */
     <div className="App">

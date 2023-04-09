@@ -1,7 +1,7 @@
 /* snippet rafce */
 import React from "react";
 import "./Navbar.css";
-import logo from "../../assets/img/exa.jpg";
+import logo from "../../assets/img/logo/exa.jpg";
 import CartWidget from "../CartWidget/CartWidget";
 
 const Navbar = () => {
