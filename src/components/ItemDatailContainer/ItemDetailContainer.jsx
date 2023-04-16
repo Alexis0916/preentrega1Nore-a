@@ -3,17 +3,15 @@ import { useEffect, useState } from "react";
 import ItemDetail from "../ItemDetail/ItemDetail";
 import { useParams } from "react-router-dom";
 
-const ItemDetailContainer = () => {
+const ItemDetailContainer = ({onAdd}) => {
   const { id } = useParams();
 
   const [producto, setProducto] = useState();
 
-  console.log('id*********', id);
 
   useEffect(() => {
     getUnProduct(id)
       .then((res) => {
-        console.log('res*********', res);
         setProducto(res)
       })
       .catch((err) => console.log(err));
@@ -21,7 +19,7 @@ const ItemDetailContainer = () => {
 
   return (
     <div>
-      <ItemDetail {...producto} />
+      <ItemDetail {...producto} onAdd={onAdd} />
     </div>
   );
 };

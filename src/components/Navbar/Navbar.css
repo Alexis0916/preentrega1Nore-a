@@ -1,12 +1,25 @@
+.nav-item.dropdown .enlaces,
+.nav-item .nav-link.enlaces
+{
+    color: var(--quinary);
+}
+
+.nav-item.dropdown .enlaces:hover,
+.nav-item .nav-link.enlaces:hover 
+{
+    color: var(--quinary);
+    text-decoration: none;
+}
+
+
 .navbar.navbar-expand-lg.navbar-light {
-    background-color: #c72b20b7;
+    background-color: var(--primary) ;
     border-bottom: 1px solid #ffffff;
     box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
     padding: 0 1rem;
     position: relative;
     z-index: 100;
     font-size: large;
-    color: black;
 }
 
 .cart {
@@ -14,12 +27,8 @@
     right: 0;
     top: 0;
     padding: 0.5rem 1rem;
-    color: #ffffff;
+    color: var(--quinary);
     border-radius: 0 0 0 0.25rem;
     font-size: 1.5rem;
     font-weight: 200;
-}
-.cartCantidad {
-color: rgb(0, 0, 0);
-font-size: small;
 }

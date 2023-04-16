@@ -2,9 +2,25 @@
     text-align: center;
     border: 1px solid black;
     margin: 3rem;
+    padding: 1rem;
+    border-radius: 10px;
+    color: var(--secondary);
 }
 
 .imgDetail {
     width: 300px;
     object-fit: contain;
+}
+
+.buttonVolver {
+    margin: 1rem;
+    color: var(--quinary);
+    background-color: var(--primary);
+    border-radius: 10px;    
+}
+
+
+.stock  {
+    color: var(--secondary);
+    font-size: 1.5rem;
 }
