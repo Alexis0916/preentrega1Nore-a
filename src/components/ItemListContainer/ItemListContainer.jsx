@@ -14,7 +14,6 @@ const ItemListContainer = (props) => {
     if (params.id === undefined) {
       getProducts()
         .then((res) => {
-          console.log(res);
           setProducts(res);
         })
         .catch((err) => console.log(err));
