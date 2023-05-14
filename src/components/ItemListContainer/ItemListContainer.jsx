@@ -1,14 +1,17 @@
-import React from "react";
+import React, { useContext } from "react";
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { getProducts, getProductsByCategory } from "../../asyncmock.js";
 import ItemList from "../ItemList/ItemList.jsx";
 
 import "./ItemListContainer.css";
+import { CarritoContext } from "../../context/CarritoContext.jsx";
 
-const ItemListContainer = (props) => {
+const ItemListContainer = () => {
   const params = useParams();
-  const [products, setProducts] = useState([]);
+
+  const {products, setProducts} = useContext(CarritoContext);
+
 
   useEffect(() => {
     if (params.id === undefined) {

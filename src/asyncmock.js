@@ -15,7 +15,7 @@ export const getProducts = () => {
 export const getUnProduct = (id) => {
   return new Promise((resolve) => {
     const miColeccion = collection(db, "productos");
-    console.log(miColeccion);
+   // console.log(miColeccion);
 
     getDocs(miColeccion).then((data) => {
       resolve(

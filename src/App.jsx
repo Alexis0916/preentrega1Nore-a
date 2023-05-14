@@ -4,11 +4,9 @@ import ItemListContainer from "./components/ItemListContainer/ItemListContainer.
 import ItemDetailContainer from "./components/ItemDatailContainer/ItemDetailContainer";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { useEffect, useState } from "react";
-import {CarritoProvider} from "./context/CarritoContext";
-import Cart from "../components/Cart/Cart"; 
 
-
-
+import Cart from "./components/Cart/Cart"; 
+import { CarritoProvider } from "./context/CarritoContext";
 
 
 function App() {
@@ -23,22 +21,22 @@ function App() {
 
 
   return (
+  <CarritoProvider>
+      <div>
+        <h1 className="app-title">EXA Pinturas</h1>
+        <BrowserRouter>
+          <Navbar countProducts={countProducts} />
+          <Routes>
+            <Route path="/" element={<ItemListContainer />} />
+            <Route path="/category/:id" element={<ItemListContainer />} />
+            <Route path="/item/:id" element={<ItemDetailContainer onAdd={onAdd} />} />
+            <Route path="/cart" element={<Cart/>} />
+            <Route path="*" element={<h1>404 Not Found</h1>} />
+          </Routes>
+        </BrowserRouter>
 
-    <div>
-      <h1 className="app-title">EXA Pinturas</h1>
-      <BrowserRouter>
-        <Navbar countProducts={countProducts} />
-        <Routes>
-          <Route path="/" element={<ItemListContainer />} />
-          <Route path="/category/:id" element={<ItemListContainer />} />
-          <Route path="/item/:id" element={<ItemDetailContainer onAdd={onAdd} />} />
-          <Route path="/cart" element={<Cart/>} />
-          <Route path="*" element={<h1>404 Not Found</h1>} />
-        </Routes>
-      </BrowserRouter>
-
-    </div>
-
+      </div>
+    </CarritoProvider>
     
   )
 } 

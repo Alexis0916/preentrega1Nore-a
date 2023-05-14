@@ -25,7 +25,15 @@ const ItemDatail = ({ id, name, price, img, description, onAdd, stock }) => {
       <h5 className="stock">Stock: {stock}</h5>
 
       <div className="itemCount">
-        <ItemCount onAdd={onAdd} stock={stock} />
+        <ItemCount 
+          onAdd={onAdd} 
+          stock={stock} 
+          id={id}
+          name={name}
+          price={price}
+          img={img}
+          description={description}
+        />
       </div>
       <button className="buttonVolver" onClick={handleVolver}> Volver </button>
     </div>

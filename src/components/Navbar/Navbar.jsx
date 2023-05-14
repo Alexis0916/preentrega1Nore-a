@@ -5,7 +5,12 @@ import logo from "../../assets/logo.jpg";
 import CartWidget from "../CartWidget/CartWidget";
 import { Link } from "react-router-dom";
 
+
+
 const Navbar = ({countProducts}) => {
+
+
+
   return (
     <div>
       <nav className="navbar navbar-expand-lg navbar-light">
@@ -32,7 +37,10 @@ const Navbar = ({countProducts}) => {
             <span className="navbar-toggler-icon"></span>
           </button>
           <div className="cart">
-            <CartWidget countProducts={countProducts} />
+            
+            <Link to="/cart"> 
+              <CartWidget countProducts={countProducts} /> 
+            </Link>
           </div>
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
