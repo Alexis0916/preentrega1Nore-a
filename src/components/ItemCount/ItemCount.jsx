@@ -1,11 +1,11 @@
 import { useContext, useState } from "react";
 import "./ItemCount.css";
 import { CarritoContext } from "../../context/CarritoContext";
+import Swal from 'sweetalert2'
 
-const ItemCount = ({ onAdd, stock, id, name, price, img, description }) => {
+
+const ItemCount = ({stock, id, name, price, img, description }) => {
   const { carrito, setCarrito } = useContext(CarritoContext);
-
-  console.log(carrito);
 
   const [quantity, setQuantity] = useState(1);
 
@@ -46,7 +46,14 @@ const ItemCount = ({ onAdd, stock, id, name, price, img, description }) => {
       setCarrito([...carrito, newProduct]);
     }
 
-    //onAdd(quantity);
+    Swal.fire({
+      position: 'top-end',
+      icon: 'success',
+      title: `Se agrego ${quantity} ${name} al carrito`,
+      showConfirmButton: false,
+      timer: 1500
+    })
+
   };
 
   return (
@@ -64,6 +71,7 @@ const ItemCount = ({ onAdd, stock, id, name, price, img, description }) => {
       <div>
         <button className="aggCart" onClick={addProduct}>
           Agregar al carrito
+
         </button>
       </div>
     </div>

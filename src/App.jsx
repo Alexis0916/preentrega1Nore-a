@@ -7,6 +7,7 @@ import { useEffect, useState } from "react";
 
 import Cart from "./components/Cart/Cart"; 
 import { CarritoProvider } from "./context/CarritoContext";
+import FormPay from "./components/FormPay/FormPay";
 
 
 function App() {
@@ -28,6 +29,7 @@ function App() {
           <Navbar countProducts={countProducts} />
           <Routes>
             <Route path="/" element={<ItemListContainer />} />
+            <Route path="/pagar" element={<FormPay />} />
             <Route path="/category/:id" element={<ItemListContainer />} />
             <Route path="/item/:id" element={<ItemDetailContainer onAdd={onAdd} />} />
             <Route path="/cart" element={<Cart/>} />
