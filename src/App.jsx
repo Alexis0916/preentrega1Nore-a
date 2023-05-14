@@ -5,7 +5,7 @@ import ItemDetailContainer from "./components/ItemDatailContainer/ItemDetailCont
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { useEffect, useState } from "react";
 import {CarritoProvider} from "./context/CarritoContext";
-import Cart from "../components/Cart/Cart";
+import Cart from "../components/Cart/Cart"; 
 
 
 
