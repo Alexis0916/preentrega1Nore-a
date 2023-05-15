@@ -43,9 +43,6 @@ const Cart = () => {
 {carrito.length === 0 ? (
         <div>
           <h2 className="carritoTittle" >No hay productos en el carrito</h2>
-          <Link className="enlace" to="/">
-            <button className="boton">Volver al inicio</button>
-          </Link>
         </div>
       ) : (
 
