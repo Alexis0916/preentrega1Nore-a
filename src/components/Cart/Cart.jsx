@@ -5,9 +5,6 @@ import CartItem from "../CartItem/CartItem";
 import Item from "../Item/Item";
 import "./cart.css";
 
-
-
-
 const Cart = () => {
   const { carrito, setCarrito } = useContext(CarritoContext);
 
@@ -27,37 +24,51 @@ const Cart = () => {
 
   return (
     <div>
+    <div className="carrito">
       <div>
-        <h1 className="carrito">Carrito</h1>
-        <Link to="/">
+        <h1 className="carritoTittle" >Carrito</h1>
+      </div>
+      <div>
+        <Link className="enlace" to="/">
           <button className="boton">Volver al inicio</button>
         </Link>
-
-        <button  className="boton" onClick={vaciarCarrito}>Vaciar Carrito</button>
       </div>
-      {carrito.length === 0 ? (
+      <div>
+        <button className="boton" onClick={vaciarCarrito}>
+          Vaciar Carrito
+        </button>
+      </div>
+      </div>
+<div >
+{carrito.length === 0 ? (
         <div>
-          <h2>No hay productos en el carrito</h2>
-          <Link to="/">
-              <button className="boton">Volver al inicio</button>
-            </Link>
+          <h2 className="carritoTittle" >No hay productos en el carrito</h2>
+          <Link className="enlace" to="/">
+            <button className="boton">Volver al inicio</button>
+          </Link>
         </div>
       ) : (
-        <div>
-          <h2 className="productos">Productos en el carrito</h2>
-          <h3>Total: ${precioTotal}</h3>
+
+        <div>       
+          <h2 className="carritoTittle">Productos en el carrito</h2>
+          <h3 className="carritoTittle">Total: ${precioTotal}</h3>
+          <div className="productContainer">
           <div className="product">
             {carrito.map((producto) => (
               <Item producto={producto} />
             ))}
           </div>
-          <Link to="/pagar">
-              <button className="boton">Pagar</button>
-            </Link>
+
+          </div>
+
+          <Link className="enlace" to="/pagar">
+            <button className="boton">Pagar</button>
+          </Link>
         </div>
       )}
-    
-    </div>
+</div>
+</div>
+
   );
 };
 

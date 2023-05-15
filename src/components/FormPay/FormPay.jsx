@@ -1,6 +1,7 @@
 import React, { useContext, useState } from 'react'
 import { CarritoContext } from '../../context/CarritoContext';
 import Swal from 'sweetalert2'
+import './FormPay.css'
 
 import { collection, getDocs, query, where, addDoc, updateDoc } from "firebase/firestore";
 import { db } from "../../services/firebase/config";
@@ -101,35 +102,36 @@ const FormPay = () => {
 
   return (
     <div>
-        <h1>Formulario de pago</h1>
+        <h1 className="carrito">Formulario de pago</h1>
 
-        <form>
+        <form className='form1'>
             <div>
-                <label htmlFor="nombre">Nombre</label>
-                <input type="text" name="nombre" id="nombre" value={nombre} onChange={(e) => setNombre(e.target.value)} />
+                <label className='form' htmlFor="nombre">Nombre</label>
+                <input type="text" name="nombre" id="nombre" value={nombre} onChange={(e) => setNombre(e.target.value)} placeholder='Nombre' />
             </div>
 
             <div>
-                <label htmlFor="apellido">Apellido</label>
-                <input type="text" name="apellido" id="apellido" value={apellido} onChange={(e) => setApellido(e.target.value)} />
+                <label className='form'  htmlFor="apellido">Apellido</label>
+                <input type="text" name="apellido" id="apellido" value={apellido} onChange={(e) => setApellido(e.target.value)}
+                placeholder='Apellido' />
             </div>
 
             <div>
-                <label htmlFor="email">Email</label>
-                <input type="email" name="email" id="email" value={email} onChange={(e) => setEmail(e.target.value)} />
+                <label className='form'  htmlFor="email">Email</label>
+                <input type="email" name="email" id="email" value={email} onChange={(e) => setEmail(e.target.value)} placeholder='Email' />
             </div>
 
             <div>
-                <label htmlFor="telefono">Telefono</label>
-                <input type="number" name="telefono" id="telefono" value={telefono} onChange={(e) => setTelefono(e.target.value)} />
+                <label className='form'   htmlFor="telefono">Telefono</label>
+                <input type="number" name="telefono" id="telefono" value={telefono} onChange={(e) => setTelefono(e.target.value)} placeholder='Telefono'/>
             </div>
 
             <div>
-                <label htmlFor="direccion">Direccion</label>
-                <input type="text" name="direccion" id="direccion" value={direccion} onChange={(e) => setDireccion(e.target.value)} />
+                <label className='form'  htmlFor="direccion">Direccion</label>
+                <input type="text" name="direccion" id="direccion" value={direccion} onChange={(e) => setDireccion(e.target.value)} placeholder='Direccion'/>
             </div>
 
-            <button onClick={handlePagar}>Enviar</button>
+            <button className="boton" onClick={handlePagar}>Enviar</button>
         </form>
 
     </div>

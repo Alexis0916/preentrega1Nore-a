@@ -1,4 +1,11 @@
 .cartCantidad{
     color: var(--quinary);
     font-size: small;
+    text-decoration: none;
+}
+
+.bi-cart4{
+    color: var(--quinary);
+    font-size: 2rem;
+
 }

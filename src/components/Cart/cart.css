@@ -1,21 +1,77 @@
-.boton {
-    display: flex;
-    align-items: content;
-    width: 150px;
-    height: 50px;
-    background-color: var(--primary);
-    font-size: large;
-    color: var(--quinary);
-    border-radius: 10px;
-    text-decoration: none;
-}
-
 .carrito {
+    display: flex; 
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .carritoTittle {
+    display: flex;
+    font-size: 2rem;
+    text-align: center;
+    color: var(--quinary);
+    margin: 10px;
+    padding: 10px;
+    border: 2px solid var(--quinary);
+  }
+  
+  .boton {
+    margin: 10px;
+    padding: 10px;
+    background-color: var(--primary);
+    color: var(--quinary);
+    border-radius: 5px;
+    border: 2px solid var(--quinary);
+    font-size: 1rem;
+    font-weight: bold;
+    text-decoration: none;
+  }
+
+  .productos {
     display: flex;
     align-items: center;
-    width: 300px;
-    height: 250px;
-    font-size: 3rem;
-    color: var(--quinary);
+    justify-content: center;
+  }
 
-}
+  .product{
+    display: flex;
+    justify-content: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    flex-wrap: wrap;
+    align-items: center;
+    background-color: var(--primary);
+    border: 2px solid var(--quinary);
+    font-size: 1rem;
+    font-weight: bold;
+    text-decoration: none;
+
+  }
+  
+  .productContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+    padding: 10px;
+    color: var(--quinary);
+    border-radius: 5px;
+    border: 2px solid var(--quinary);
+    font-size: 1rem;
+    font-weight: bold;
+    text-decoration: none;
+
+  }
+
+  .enlace{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    color: var(--quinary);
+    margin: 0 auto;
+    padding: 10px;
+    
+
+  }
