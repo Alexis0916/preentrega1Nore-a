@@ -18,7 +18,6 @@ export const CartWidget = ({ countProducts }) => {
 
   return (
     <div className="bi-cart4">
-      <i className="bi bi-cart4"></i>
       <strong className="cartCantidad">{totalCantidad}</strong>
     </div>
   );
